@@ -2,106 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://johnnyhx.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://johnnyhx.github.io/zh-cn/about/"
+                href="http://localhost:1313/zh-cn/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://johnnyhx.github.io/about/"
+                href="http://localhost:1313/about/"
                 />
   </url><url>
-    <loc>https://johnnyhx.github.io/posts/hello/</loc>
+    <loc>http://localhost:1313/posts/hello/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://johnnyhx.github.io/zh-cn/posts/hello/"
+                href="http://localhost:1313/zh-cn/posts/hello/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://johnnyhx.github.io/posts/hello/"
+                href="http://localhost:1313/posts/hello/"
                 />
   </url><url>
-    <loc>https://johnnyhx.github.io/links/</loc>
+    <loc>http://localhost:1313/links/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://johnnyhx.github.io/zh-cn/links/"
+                href="http://localhost:1313/zh-cn/links/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://johnnyhx.github.io/links/"
+                href="http://localhost:1313/links/"
                 />
   </url><url>
-    <loc>https://johnnyhx.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://johnnyhx.github.io/zh-cn/posts/"
+                href="http://localhost:1313/zh-cn/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://johnnyhx.github.io/posts/"
+                href="http://localhost:1313/posts/"
                 />
   </url><url>
-    <loc>https://johnnyhx.github.io/sharing/</loc>
+    <loc>http://localhost:1313/sharing/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://johnnyhx.github.io/zh-cn/sharing/"
+                href="http://localhost:1313/zh-cn/sharing/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://johnnyhx.github.io/sharing/"
+                href="http://localhost:1313/sharing/"
                 />
   </url><url>
-    <loc>https://johnnyhx.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://johnnyhx.github.io/zh-cn/"
+                href="http://localhost:1313/zh-cn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://johnnyhx.github.io/"
+                href="http://localhost:1313/"
                 />
   </url><url>
-    <loc>https://johnnyhx.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://johnnyhx.github.io/zh-cn/categories/"
+                href="http://localhost:1313/zh-cn/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://johnnyhx.github.io/categories/"
+                href="http://localhost:1313/categories/"
                 />
   </url><url>
-    <loc>https://johnnyhx.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://johnnyhx.github.io/zh-cn/tags/"
+                href="http://localhost:1313/zh-cn/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://johnnyhx.github.io/tags/"
+                href="http://localhost:1313/tags/"
                 />
   </url>
 </urlset>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Terminal</title>
-    <link>https://johnnyhx.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://johnnyhx.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>https://johnnyhx.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://johnnyhx.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;h1 id=&#34;hi-there&#34;&gt;Hi there&lt;/h1&gt;
 &lt;p&gt;My name is Johnny Yang, and I&amp;rsquo;m an embedded software engineer who likes programming and playing computer games.&lt;/p&gt;
 &lt;p&gt;I will share my daily life and on this site in the future, and I&amp;rsquo;m looking forward to making friends with like-minded people and getting in touch with you &amp;hellip;&lt;/p&gt;</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>Hello</title>
-      <link>https://johnnyhx.github.io/posts/hello/</link>
+      <link>http://localhost:1313/posts/hello/</link>
       <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://johnnyhx.github.io/posts/hello/</guid>
+      <guid>http://localhost:1313/posts/hello/</guid>
       <description>&lt;h3 id=&#34;congratulations&#34;&gt;Congratulations!&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
@@ -50,10 +50,10 @@
     
     <item>
       <title>Links</title>
-      <link>https://johnnyhx.github.io/links/</link>
+      <link>http://localhost:1313/links/</link>
       <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://johnnyhx.github.io/links/</guid>
+      <guid>http://localhost:1313/links/</guid>
       <description>&lt;h1 id=&#34;hi-there&#34;&gt;Hi there&lt;/h1&gt;
 &lt;h1 id=&#34;tiaotiaotichttpstiaotiaoticgithubio&#34;&gt;&lt;a href=&#34;https://tiaotiaotic.github.io/&#34;&gt;TiaoTiaotic&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&#34;haolenghttpshaoleng-wickgithubio&#34;&gt;&lt;a href=&#34;https://haoleng-wick.github.io/&#34;&gt;HaoLeng&lt;/a&gt;&lt;/h1&gt;
@@ -67,15 +67,17 @@
     
     <item>
       <title>Sharing</title>
-      <link>https://johnnyhx.github.io/sharing/</link>
+      <link>http://localhost:1313/sharing/</link>
       <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://johnnyhx.github.io/sharing/</guid>
-      <description>&lt;blockquote&gt;
+      <guid>http://localhost:1313/sharing/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;imgs/NightCity.jpg&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Updating &amp;hellip;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;See you soon!&lt;/p&gt;</description>
-      <content>&lt;blockquote&gt;
+      <content>&lt;p&gt;&lt;img src=&#34;imgs/NightCity.jpg&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Updating &amp;hellip;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;See you soon!&lt;/p&gt;

@@ -2,6 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://johnnyhx.github.io/posts/mypostmarketos/</loc>
+    <lastmod>2024-11-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://johnnyhx.github.io/zh-cn/posts/mypostmarketos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://johnnyhx.github.io/posts/mypostmarketos/"
+                />
+  </url><url>
+    <loc>https://johnnyhx.github.io/posts/</loc>
+    <lastmod>2024-11-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://johnnyhx.github.io/zh-cn/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://johnnyhx.github.io/posts/"
+                />
+  </url><url>
+    <loc>https://johnnyhx.github.io/</loc>
+    <lastmod>2024-11-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://johnnyhx.github.io/zh-cn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://johnnyhx.github.io/"
+                />
+  </url><url>
     <loc>https://johnnyhx.github.io/about/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -41,19 +80,6 @@
                 href="https://johnnyhx.github.io/links/"
                 />
   </url><url>
-    <loc>https://johnnyhx.github.io/posts/</loc>
-    <lastmod>2024-10-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://johnnyhx.github.io/zh-cn/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://johnnyhx.github.io/posts/"
-                />
-  </url><url>
     <loc>https://johnnyhx.github.io/sharing/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -65,19 +91,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://johnnyhx.github.io/sharing/"
-                />
-  </url><url>
-    <loc>https://johnnyhx.github.io/</loc>
-    <lastmod>2024-10-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://johnnyhx.github.io/zh-cn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://johnnyhx.github.io/"
                 />
   </url><url>
     <loc>https://johnnyhx.github.io/categories/</loc>

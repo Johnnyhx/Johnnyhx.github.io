@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://johnnyhx.github.io/zh-cn/posts/</loc>
-    <lastmod>2024-10-26T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-17T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -13,6 +13,32 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://johnnyhx.github.io/zh-cn/posts/"
+                />
+  </url><url>
+    <loc>https://johnnyhx.github.io/zh-cn/posts/mypostmarketos/</loc>
+    <lastmod>2024-11-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://johnnyhx.github.io/posts/mypostmarketos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://johnnyhx.github.io/zh-cn/posts/mypostmarketos/"
+                />
+  </url><url>
+    <loc>https://johnnyhx.github.io/zh-cn/</loc>
+    <lastmod>2024-11-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://johnnyhx.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://johnnyhx.github.io/zh-cn/"
                 />
   </url><url>
     <loc>https://johnnyhx.github.io/zh-cn/posts/hello/</loc>
@@ -65,19 +91,6 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://johnnyhx.github.io/zh-cn/links/"
-                />
-  </url><url>
-    <loc>https://johnnyhx.github.io/zh-cn/</loc>
-    <lastmod>2024-10-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://johnnyhx.github.io/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://johnnyhx.github.io/zh-cn/"
                 />
   </url><url>
     <loc>https://johnnyhx.github.io/zh-cn/categories/</loc>

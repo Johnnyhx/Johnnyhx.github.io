@@ -14,9 +14,6 @@
 <link rel="canonical" href="https://johnnyhx.github.io/zh-cn/posts/mypostmarketos/" />
 
 
-  
-
-
 
 
 
@@ -115,7 +112,7 @@
 <body>
 
 
-<div class="container center">
+<div class="container">
 
   <header class="header">
   <div class="header__inner">
@@ -284,7 +281,15 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    sleep <span style="color:#ae81ff">60</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &amp;
-</span></span></code></pre></div><blockquote>
+</span></span></code></pre></div><ol start="3">
+<li>ssh连接github出现的端口问题(因为我使用的v2raya梯子开的tun模式)</li>
+</ol>
+<p><code>~/.ssh/config</code></p>
+<pre tabindex="0"><code>Host github.com
+Hostname ssh.github.com
+Port 443
+</code></pre><p>然后如果出现<code>ssh &quot;permissions are too open&quot;</code>错误，一般是因为<code>id_ras</code>的权限太过开放，我们只需要将他改成只读模式<code>chmod 400 ~/.ssh/id_rsa</code>就行了。</p>
+<blockquote>
 <p>待续未完……</p>
 </blockquote>
 

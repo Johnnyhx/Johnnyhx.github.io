@@ -13,104 +13,74 @@
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
       
       <guid>https://johnnyhx.github.io/zh-cn/posts/mypostmarketos/</guid>
-      <description>&lt;h3 id=&#34;小米平板5proxiaomi-pad-elish&#34;&gt;小米平板5Pro(XiaoMi Pad Elish)&lt;/h3&gt;
-&lt;p&gt;首先需要获取平板的root权限，建议用面具刷，然后解锁BL锁，最后在FastLoad模式下线刷。&lt;/p&gt;
-&lt;h3 id=&#34;postmarketos-linux的安装&#34;&gt;PostmarketOS Linux的安装&lt;/h3&gt;
-&lt;p&gt;具体参考&lt;a href=&#34;https://wiki.postmarketos.org/wiki/Xiaomi_Mi_Pad_5_Pro_(xiaomi-elish)&#34;&gt;PostmarketOS Wiki&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;安装后的初步配置&#34;&gt;安装后的初步配置&lt;/h3&gt;
-&lt;p&gt;KDE的动态壁纸插件有点耗资源，且有点费电，因此本人将自己以前用的的DWM动态壁纸脚本带到了KDE桌面环境，实现了根据时间变化壁纸的效果，脚本如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/usr/bin/env sh
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sleep &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;TEMP&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;MINS&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 壁纸的路径&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;location&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/home/haoleng/图片/images/lakeside&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wallpaper&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;date +%_H&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;.jpg
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; set_wallpaper&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    dbus-send --session --dest&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;org.kde.plasmashell --type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;method_call /PlasmaShell org.kde.PlasmaShell.evaluateScript &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;string:
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    var Desktops = desktops();                                                                                                                       
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    for (i=0;i&amp;lt;Desktops.length;i++) {
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;            d = Desktops[i];
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;            d.wallpaperPlugin = &amp;#34;org.kde.image&amp;#34;;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;            d.currentConfigGroup = Array(&amp;#34;Wallpaper&amp;#34;,
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;                                        &amp;#34;org.kde.image&amp;#34;,
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;                                        &amp;#34;General&amp;#34;);
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;            d.writeConfig(&amp;#34;Image&amp;#34;, &amp;#34;file://&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;$location&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;wallpaper&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;);
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    }&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# 核心语句，使用 dbus-send&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 设置初始壁纸&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;set_wallpaper
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 每60秒循环一次&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; true;&lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 内部计时器&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    let TEMP++
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 十分钟更新一次壁纸&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; $TEMP -eq $MINS &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        TEMP&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        wallpaper&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;date +%_H&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;.jpg
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        set_wallpaper
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sleep &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;待续未完……&lt;/p&gt;</description>
+      <description>小米平板5Pro(XiaoMi Pad Elish) 首先需要获取平板的root权限，建议用面具刷，然后解锁BL锁，最后在FastLoad模式下线刷。
+PostmarketOS Linux的安装 具体参考PostmarketOS Wiki
+安装后的初步配置 一个体验更好的shell，安装zsh 这是我的zsh配置文件：
+# Alias alias ra=&amp;#39;yazi&amp;#39; alias ne=&amp;#39;fastfetch --cpu-temp&amp;#39; # History HISTFILE=&amp;#34;$HOME/.zsh_history&amp;#34; HISTSIZE=1024 SAVEHIST=1024 setopt HIST_IGNORE_DUPS setopt HIST_IGNORE_SPACE setopt EXTENDED_HISTORY # Plugins source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh source /usr/share/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh autoload -U compinit compinit eval &amp;#34;$(starship init zsh)&amp;#34; 装了几个插件，没有使用Oh-My—Zsh或者Zim等，个人感觉有点臃肿。
+开箱即用的桌面环境（KDE） KDE桌面环境非常省事，而且个人觉得比GNOME好用一点。
+KDE的动态壁纸插件有点耗资源，且有点费电，另外，KDE支持autostart脚本，因此很容易将自己以前用的的DWM动态壁纸脚本移植到KDE上，该脚本内容如下，可以实现壁纸随时间变化的效果：
+#!/usr/bin/env sh sleep 2 TEMP=0 MINS=10 # Path of Wallpaper location=&amp;#34;/home/johnny/.config/wallpapers/&amp;#34; wallpaper=`date +%H`.jpg # Set Origin Wallpaper plasma-apply-wallpaperimage $location$wallpaper while true;do let TEMP++ if [ $TEMP -eq $MINS ]; then TEMP=0 wallpaper=`date +%H`.</description>
       <content>&lt;h3 id=&#34;小米平板5proxiaomi-pad-elish&#34;&gt;小米平板5Pro(XiaoMi Pad Elish)&lt;/h3&gt;
 &lt;p&gt;首先需要获取平板的root权限，建议用面具刷，然后解锁BL锁，最后在FastLoad模式下线刷。&lt;/p&gt;
 &lt;h3 id=&#34;postmarketos-linux的安装&#34;&gt;PostmarketOS Linux的安装&lt;/h3&gt;
 &lt;p&gt;具体参考&lt;a href=&#34;https://wiki.postmarketos.org/wiki/Xiaomi_Mi_Pad_5_Pro_(xiaomi-elish)&#34;&gt;PostmarketOS Wiki&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;安装后的初步配置&#34;&gt;安装后的初步配置&lt;/h3&gt;
-&lt;p&gt;KDE的动态壁纸插件有点耗资源，且有点费电，因此本人将自己以前用的的DWM动态壁纸脚本带到了KDE桌面环境，实现了根据时间变化壁纸的效果，脚本如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/usr/bin/env sh
+&lt;ol&gt;
+&lt;li&gt;一个体验更好的shell，安装zsh&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这是我的zsh配置文件：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Alias&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;alias ra&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;yazi&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;alias ne&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;fastfetch --cpu-temp&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# History&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;HISTFILE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$HOME&lt;span style=&#34;color:#e6db74&#34;&gt;/.zsh_history&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;HISTSIZE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1024&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;SAVEHIST&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1024&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;setopt HIST_IGNORE_DUPS
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;setopt HIST_IGNORE_SPACE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;setopt EXTENDED_HISTORY
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Plugins&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;source /usr/share/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;autoload -U compinit
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;compinit
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;eval &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;starship init zsh&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;装了几个插件，没有使用Oh-My—Zsh或者Zim等，个人感觉有点臃肿。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;开箱即用的桌面环境（KDE）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;KDE桌面环境非常省事，而且个人觉得比GNOME好用一点。&lt;/p&gt;
+&lt;p&gt;KDE的动态壁纸插件有点耗资源，且有点费电，另外，KDE支持autostart脚本，因此很容易将自己以前用的的DWM动态壁纸脚本移植到KDE上，该脚本内容如下，可以实现壁纸随时间变化的效果：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/usr/bin/env sh
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sleep &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;TEMP&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;MINS&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 壁纸的路径&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;location&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/home/haoleng/图片/images/lakeside&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wallpaper&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;date +%_H&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Path of Wallpaper&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;location&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/home/johnny/.config/wallpapers/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wallpaper&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;date +%H&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;.jpg
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; set_wallpaper&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    dbus-send --session --dest&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;org.kde.plasmashell --type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;method_call /PlasmaShell org.kde.PlasmaShell.evaluateScript &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;string:
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    var Desktops = desktops();                                                                                                                       
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    for (i=0;i&amp;lt;Desktops.length;i++) {
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;            d = Desktops[i];
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;            d.wallpaperPlugin = &amp;#34;org.kde.image&amp;#34;;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;            d.currentConfigGroup = Array(&amp;#34;Wallpaper&amp;#34;,
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;                                        &amp;#34;org.kde.image&amp;#34;,
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;                                        &amp;#34;General&amp;#34;);
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;            d.writeConfig(&amp;#34;Image&amp;#34;, &amp;#34;file://&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;$location&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;wallpaper&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;);
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    }&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# 核心语句，使用 dbus-send&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Set Origin Wallpaper&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plasma-apply-wallpaperimage $location$wallpaper
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 设置初始壁纸&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;set_wallpaper
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 每60秒循环一次&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; true;&lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 内部计时器&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    let TEMP++
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 十分钟更新一次壁纸&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; $TEMP -eq $MINS &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        TEMP&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        wallpaper&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;date +%_H&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        wallpaper&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;date +%H&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;.jpg
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        set_wallpaper
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        plasma-apply-wallpaperimage $location$wallpaper
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sleep &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt; &amp;amp;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;待续未完……&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -123,15 +93,7 @@
       <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
       
       <guid>https://johnnyhx.github.io/zh-cn/posts/hello/</guid>
-      <description>&lt;h3 id=&#34;热烈祝贺&#34;&gt;热烈祝贺!&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello everyone!&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <description>热烈祝贺! #include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;#34;Hello everyone!\n&amp;#34;); return 0; } </description>
       <content>&lt;h3 id=&#34;热烈祝贺&#34;&gt;热烈祝贺!&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
@@ -149,11 +111,10 @@
       <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
       
       <guid>https://johnnyhx.github.io/zh-cn/sharing/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;还在建设中 &amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;预计很快将和你们相见！&lt;/p&gt;</description>
-      <content>&lt;blockquote&gt;
+      <description>还在建设中 &amp;hellip;
+预计很快将和你们相见！</description>
+      <content>&lt;p&gt;&lt;img src=&#34;https://johnnyhx.github.io/sharing/NightCity.jpg&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;还在建设中 &amp;hellip;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;预计很快将和你们相见！&lt;/p&gt;
@@ -166,12 +127,11 @@
       <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
       
       <guid>https://johnnyhx.github.io/zh-cn/about/</guid>
-      <description>&lt;h1 id=&#34;你好哇&#34;&gt;你好哇&lt;/h1&gt;
-&lt;p&gt;我叫Johnny Yang, 是一个嵌入式软件工程师，平时就喜欢打打游戏，折腾折腾电脑，学学编程等。&lt;/p&gt;
-&lt;p&gt;我会在这个网站留下我学习生活中值得记录与分享的内容，我也希望能找到志同道合的朋友，同时也很希望能和你们取得联系，这是我的邮箱：2604918320@gmail.com&lt;/p&gt;</description>
+      <description>你好哇 我叫Johnny Yang, 是一个嵌入式软件工程师，平时就喜欢打打游戏，折腾折腾电脑，学学编程等。
+我会在这个网站留下我学习生活中值得记录与分享的内容，我也希望能找到志同道合的朋友，同时也很希望能和你们取得联系，这是我的邮箱：johnnyhx666@gmail.com</description>
       <content>&lt;h1 id=&#34;你好哇&#34;&gt;你好哇&lt;/h1&gt;
 &lt;p&gt;我叫Johnny Yang, 是一个嵌入式软件工程师，平时就喜欢打打游戏，折腾折腾电脑，学学编程等。&lt;/p&gt;
-&lt;p&gt;我会在这个网站留下我学习生活中值得记录与分享的内容，我也希望能找到志同道合的朋友，同时也很希望能和你们取得联系，这是我的邮箱：2604918320@gmail.com&lt;/p&gt;
+&lt;p&gt;我会在这个网站留下我学习生活中值得记录与分享的内容，我也希望能找到志同道合的朋友，同时也很希望能和你们取得联系，这是我的邮箱：johnnyhx666@gmail.com&lt;/p&gt;
 </content>
     </item>
     
@@ -181,11 +141,8 @@
       <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
       
       <guid>https://johnnyhx.github.io/zh-cn/links/</guid>
-      <description>&lt;h1 id=&#34;看这里&#34;&gt;看这里&lt;/h1&gt;
-&lt;h1 id=&#34;tiaotiaotichttpstiaotiaoticgithubio&#34;&gt;&lt;a href=&#34;https://tiaotiaotic.github.io/&#34;&gt;TiaoTiaotic&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&#34;haolenghttpshaoleng-wickgithubio&#34;&gt;&lt;a href=&#34;https://haoleng-wick.github.io/&#34;&gt;HaoLeng&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;祝您愉快！&lt;/p&gt;</description>
-      <content>&lt;h1 id=&#34;看这里&#34;&gt;看这里&lt;/h1&gt;
+      <description>快看！ TiaoTiaotic HaoLeng 祝您愉快！</description>
+      <content>&lt;h1 id=&#34;快看&#34;&gt;快看！&lt;/h1&gt;
 &lt;h1 id=&#34;tiaotiaotichttpstiaotiaoticgithubio&#34;&gt;&lt;a href=&#34;https://tiaotiaotic.github.io/&#34;&gt;TiaoTiaotic&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&#34;haolenghttpshaoleng-wickgithubio&#34;&gt;&lt;a href=&#34;https://haoleng-wick.github.io/&#34;&gt;HaoLeng&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;祝您愉快！&lt;/p&gt;
